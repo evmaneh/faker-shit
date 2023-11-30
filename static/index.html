@@ -1,41 +1,110 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classes</title>
-   <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png" />
-  <link rel="shortcut icon" href="https://ssl.gstatic.com/classroom/favicon.png" />
-  <link rel="stylesheet" href="style.css">
+  <title>FlipHQ  Panel</title>
+  <style>
+    body {
+  text-align: center;
+}
+
+    .flip-container {
+      perspective: 1000px;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .flip-container .flipper {
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .flip-container .flipper .front,
+    .flip-container .flipper .back {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .flip-container .flipper .front {
+      z-index: 2;
+      transform: rotateY(0deg);
+    }
+
+    .flip-container .flipper .back {
+      transform: rotateY(180deg);
+    }
+
+    .flip-container.flip .flipper {
+      transform: rotateY(180deg);
+    }
+  </style>
 </head>
 <body>
-  <div align="center">
-    <img src="https://cdn.glitch.global/9f860427-e926-4eec-adf0-681449002e89/tagrealwtf.png?v=1700506530747" style="
-  border-radius: 25px;
-  padding: 10px;
-  width: 250px;
-  height: px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  ">
-      <h1 title="Galactic, coming back for another run. A Galactic Network site">To<span>ol</span>s</h1>
-      <h2>  <span id="subtitle">Unblocking because I'm bored!</span></h2>
+  <h1>FlipHQ Admin Panel</h1>
+  <div class="flip-container">
+  <div class="flipper" id="button1">
+    <div class="front">
+      <button class="btn btn-primary" onclick="redirectToIP()">IP diagnostics</button>
+    </div>
+    <div class="back">
       <form>
         <input placeholder="Search the web freely">
-    </form>
-    <button class="btn" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://s1g7.onrender.com/play/roblox-corporation/5349/roblox');">R0BLOX</button>
-    <button class="btn" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://peachychatroom.kidschatclub.site/');">Peachychat</button>
-    <button class="btn" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://peachypage.glitch.me/');">Peachychat</button>
-    <h6><p>© <a href="https://github.com/GalacticNetwork/Galactic">Galactic Network</a> 2023</p></h6>
+      </form>
+    </div>
   </div>
+</div>
+<br><br>
+
+  <div class="flip-container">
+    <div class="flipper" id="button2">
+      <div class="front">
+        <button class="btn btn-primary" onclick="redirectToIP()">Private files</button>
+      </div>
+      <div class="back">
+        <button class="btn btn-primary"
+        onclick="b2()">Public</button>
+      </div>
+    </div>
+  </div>
+<br><br>
+  <div class="flip-container">
+    <div class="flipper" id="button3">
+      <div class="front">
+        <button class="btn btn-primary" onclick="reload()">Restart</button>
+      </div>
+      <div class="back">
+        <button class="btn btn-primary" onclick="3()">Shutdown</button>
+      </div>
+    </div>
+  </div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+  <button class="btn btn-primary" onclick="flipAll()">(Broken)</button>
+
+  <script>
+    function flipAll() {
+      var flipContainers = document.getElementsByClassName("flip-container");
+      for (var i = 0; i < flipContainers.length; i++) {
+        flipContainers[i].classList.toggle("flip");
+      }
+    }
+  </script>
+  <script>
+  function redirectToIP() {
+    window.location.href = "ip.html";
+  }
+  function b2() {
+    window.location.href = "redacted.html";
+  }
+  function reload() {
+    location.reload();
+  }
+  function 3() {
+    window.close();
+  }
+</script>
 </body>
-    <script src="uv/uv.bundle.js" defer></script>
+<script src="uv/uv.bundle.js" defer></script>
     <script src="uv/uv.config.js" defer></script>
     <script src="index.js" defer></script>
-    <script src="/js/settings.js"></script>
-    <script src="/js/settings2.js"></script>
-  <script src="/js/ab.js"></script>
 </html>
